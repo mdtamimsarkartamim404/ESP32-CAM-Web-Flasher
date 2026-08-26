@@ -1,0 +1,16 @@
+{
+  "name": "ESP32-CAM Control Panel",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "firmware/esp32cam-full.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
