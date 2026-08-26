@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="ESP32-CAM Web Flasher">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ESP32-CAM Web Flasher</title>
 
-    <script
-        type="module"
+    <script type="module"
         src="https://unpkg.com/esp-web-tools@10.1.0/dist/web/install-button.js?module">
     </script>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -29,19 +18,9 @@
         body {
             margin: 0;
             min-height: 100vh;
+            font-family: Arial, sans-serif;
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #020617,
-                    #0f172a
-                );
-
+            background: #020617;
             color: white;
 
             display: flex;
@@ -53,201 +32,81 @@
 
         .container {
             width: 100%;
-            max-width: 850px;
+            max-width: 800px;
         }
 
         .card {
             background: #0f172a;
-
             border: 1px solid #334155;
-
             border-radius: 20px;
 
             padding: 30px;
 
-            box-shadow:
-                0 20px 50px
-                rgba(0,0,0,.35);
-        }
-
-        .header {
             text-align: center;
-
-            margin-bottom: 30px;
         }
 
-        .logo {
-            font-size: 55px;
-
-            margin-bottom: 10px;
+        .icon {
+            font-size: 60px;
         }
 
         h1 {
-            margin: 0;
-
-            font-size: 32px;
+            margin: 10px 0;
         }
 
-        .subtitle {
+        p {
             color: #94a3b8;
-
-            margin-top: 10px;
-
             line-height: 1.6;
         }
 
         .device {
-            background: #020617;
-
-            border: 1px solid #1e293b;
-
-            border-radius: 15px;
+            margin: 25px 0;
 
             padding: 20px;
 
-            margin-bottom: 25px;
+            background: #020617;
+
+            border-radius: 12px;
         }
 
-        .device h2 {
-            margin-top: 0;
-        }
-
-        .specs {
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(180px,1fr)
-                );
-
-            gap: 12px;
-
-            margin-top: 15px;
-        }
-
-        .spec {
-            background: #0f172a;
-
-            padding: 15px;
-
-            border-radius: 10px;
-        }
-
-        .spec small {
-            display: block;
-
-            color: #94a3b8;
-
-            margin-bottom: 5px;
-        }
-
-        .spec strong {
-            font-size: 15px;
-        }
-
-        .flash-area {
-            text-align: center;
-
-            padding: 25px 10px;
+        .device div {
+            margin: 8px 0;
         }
 
         esp-web-install-button {
             display: inline-block;
+            margin: 20px 0;
         }
 
-        .instructions {
-            margin-top: 30px;
-        }
-
-        .instructions h2 {
-            margin-bottom: 15px;
+        .steps {
+            text-align: left;
+            margin-top: 25px;
         }
 
         .step {
-            display: flex;
-
-            gap: 15px;
-
-            margin-bottom: 15px;
-
-            padding: 15px;
-
             background: #020617;
+            padding: 15px;
+            margin: 10px 0;
 
             border-radius: 10px;
-        }
-
-        .number {
-            min-width: 32px;
-            height: 32px;
-
-            border-radius: 50%;
-
-            background: #2563eb;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            font-weight: bold;
-        }
-
-        .step p {
-            margin: 0;
 
             color: #cbd5e1;
-
-            line-height: 1.5;
         }
 
         .warning {
-            margin-top: 25px;
+            margin-top: 20px;
 
             padding: 15px;
-
-            border-radius: 10px;
 
             background: #422006;
 
             border: 1px solid #92400e;
 
+            border-radius: 10px;
+
             color: #fde68a;
-
-            line-height: 1.5;
         }
-
-        .footer {
-            text-align: center;
-
-            margin-top: 25px;
-
-            color: #64748b;
-
-            font-size: 13px;
-        }
-
-        @media(max-width:600px) {
-
-            .card {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 25px;
-            }
-
-            .logo {
-                font-size: 45px;
-            }
-
-        }
-
     </style>
-
 </head>
-
 
 <body>
 
@@ -255,220 +114,68 @@
 
     <div class="card">
 
-        <div class="header">
+        <div class="icon">📷</div>
 
-            <div class="logo">
-                📷
-            </div>
+        <h1>ESP32-CAM Web Flasher</h1>
 
-            <h1>
-                ESP32-CAM Web Flasher
-            </h1>
-
-            <p class="subtitle">
-
-                Flash your AI Thinker ESP32-CAM
-                directly from your browser.
-
-                No Arduino IDE required during flashing.
-
-            </p>
-
-        </div>
-
+        <p>
+            Flash your AI Thinker ESP32-CAM directly
+            from your browser.
+        </p>
 
         <div class="device">
 
-            <h2>
-                🔧 Device Information
-            </h2>
+            <h2>AI Thinker ESP32-CAM</h2>
 
-            <div class="specs">
-
-                <div class="spec">
-
-                    <small>Board</small>
-
-                    <strong>
-                        AI Thinker ESP32-CAM
-                    </strong>
-
-                </div>
-
-
-                <div class="spec">
-
-                    <small>Camera</small>
-
-                    <strong>
-                        OV2640
-                    </strong>
-
-                </div>
-
-
-                <div class="spec">
-
-                    <small>Resolution</small>
-
-                    <strong>
-                        240 × 240
-                    </strong>
-
-                </div>
-
-
-                <div class="spec">
-
-                    <small>Firmware</small>
-
-                    <strong>
-                        ESP32-CAM Control Panel
-                    </strong>
-
-                </div>
-
-            </div>
+            <div>📷 Camera: OV2640</div>
+            <div>📐 Resolution: 240 × 240</div>
+            <div>⚡ Chip: ESP32</div>
 
         </div>
 
+        <esp-web-install-button manifest="./manifest.json">
+        </esp-web-install-button>
 
-        <div class="flash-area">
+        <div class="steps">
 
-            <esp-web-install-button
-                manifest="manifest.json">
-
-                <span slot="activate">
-                    ⚡ Connect & Flash ESP32-CAM
-                </span>
-
-                <span slot="unsupported">
-                    ❌ Your browser does not support
-                    Web Serial.
-                </span>
-
-                <span slot="not-allowed">
-                    ❌ Web Serial is not allowed.
-                </span>
-
-            </esp-web-install-button>
-
-        </div>
-
-
-        <div class="instructions">
-
-            <h2>
-                📋 How to Flash
-            </h2>
-
+            <h2>How to Flash</h2>
 
             <div class="step">
-
-                <div class="number">
-                    1
-                </div>
-
-                <p>
-
-                    Connect your ESP32-CAM to your
-                    computer using a USB-to-TTL
-                    programmer.
-
-                </p>
-
+                <b>1.</b>
+                Connect USB-TTL to ESP32-CAM.
             </div>
 
-
             <div class="step">
-
-                <div class="number">
-                    2
-                </div>
-
-                <p>
-
-                    Put the ESP32-CAM into
-                    programming mode by connecting
-                    GPIO 0 to GND.
-
-                </p>
-
+                <b>2.</b>
+                Connect GPIO 0 to GND.
             </div>
 
-
             <div class="step">
-
-                <div class="number">
-                    3
-                </div>
-
-                <p>
-
-                    Connect the USB programmer and
-                    click
-                    <b>Connect & Flash ESP32-CAM</b>.
-
-                </p>
-
+                <b>3.</b>
+                Click the Install button above.
             </div>
 
-
             <div class="step">
-
-                <div class="number">
-                    4
-                </div>
-
-                <p>
-
-                    Select the serial port and allow
-                    the browser to flash the firmware.
-
-                </p>
-
+                <b>4.</b>
+                Select your ESP32 COM port.
             </div>
 
+            <div class="step">
+                <b>5.</b>
+                Flash the firmware.
+            </div>
 
             <div class="step">
-
-                <div class="number">
-                    5
-                </div>
-
-                <p>
-
-                    Wait until flashing reaches 100%.
-                    Then disconnect GPIO 0 from GND
-                    and reset the ESP32-CAM.
-
-                </p>
-
+                <b>6.</b>
+                Disconnect GPIO 0 from GND and reset.
             </div>
 
         </div>
-
 
         <div class="warning">
 
-            ⚠️ <b>Important:</b>
-
-            Use Google Chrome or Microsoft Edge
-            on a desktop computer.
-
-            Web Serial generally does not work in
-            Firefox.
-
-            Make sure the correct ESP32 firmware
-            binary is hosted in the
-            <code>firmware</code> folder.
-
-        </div>
-
-
-        <div class="footer">
-
-            ESP32-CAM Web Flasher
+            ⚠️ Use Google Chrome or Microsoft Edge.
+            Web Serial is required.
 
         </div>
 
@@ -477,5 +184,4 @@
 </div>
 
 </body>
-
 </html>
